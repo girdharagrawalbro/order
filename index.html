@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+</head>
+
+<body>
+    <h1>Order Form</h1>
+    <button onclick="addRow()">Add Dish</button>
+    <button onclick="printBill()">Print Bill</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Serial Number</th>
+                <th>Dish</th>
+                <th>Quantity</th>
+                <th>Price per Unit </th>
+                <th>Total Price </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be added here -->
+        </tbody>
+    </table>
+    <p class="total">Overall Total: Rs.<span class="overallTotal">0.00</span></p>
+
+    <div class="billContent hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
