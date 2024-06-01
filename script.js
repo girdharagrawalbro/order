@@ -12,7 +12,7 @@ const dishPrices = {
     "Manchurian": 50,
 
     // Sandwiches section
-    "Frankly": 30,
+    "Franky": 30,
     "Veg Sandwich": 30,
     "Paneer Sandwich": 50,
     "Veg Frankie": 30,
