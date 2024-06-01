@@ -79,7 +79,9 @@ const dishPrices = {
 
     "Tea": 5,
     "Special Tea": 10,
-    "Hot Coffee": 15
+    "Hot Coffee": 15,
+
+    "Water bottle": 10
 };
 
 const dishes = Object.keys(dishPrices);
