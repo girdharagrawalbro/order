@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,26 +10,38 @@
 </head>
 
 <body>
-    <h1>Order Form</h1>
-    <button onclick="addRow()">Add Dish</button>
-    <button onclick="printBill()">Print Bill</button>
-    <table>
-        <thead>
-            <tr>
-                <th>Serial Number</th>
-                <th>Dish</th>
-                <th>Quantity</th>
-                <th>Price per Unit </th>
-                <th>Total Price </th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Rows will be added here -->
-        </tbody>
-    </table>
-    <p class="total">Overall Total: Rs.<span class="overallTotal">0.00</span></p>
+    <div class="container">
+        <h1>Order Form</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Serial Number</th>
+                    <th>Dish</th>
+                    <th>Quantity</th>
+                    <th>Price per Unit</th>
+                    <th>Total Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Row for adding dishes -->
+                <tr id="addRow">
+                    <td>
+                        <button class="add-btn" onclick="addRow()">+ Add</button>
+                    </td>
+                    <td colspan="5"></td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="total">Overall Total: Rs.<span class="overallTotal">0.00</span></p>
+        <button class="print-btn" onclick="printBill()">Print Bill</button>
+    </div>
 
     <div class="billContent hidden"></div>
+
+    <footer>
+        &copy; 2024 Your Restaurant. All Rights Reserved.
+    </footer>
 
     <script src="script.js"></script>
 </body>
