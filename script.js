@@ -8,8 +8,12 @@ const dishPrices = {
 
     // Chinese section
     "Fried Rice": 60,
+    "Paneer Rice": 80,
     "Chowmein": 40,
     "Manchurian": 50,
+    "Manchurian Rice": 70,
+    "Schezwan Rice": 70,
+    "Schezwan Chowmin": 60,
 
     // Sandwiches section
     "Franky": 30,
@@ -18,6 +22,7 @@ const dishPrices = {
     "Veg Frankie": 30,
     "Cheese Frankie": 50,
     "Paneer Frankie": 50,
+    "Paneer Roll": 50,
     "Masala Sandwich": 40,
     "Veg Cheese Sandwich": 50,
     "Cheese Masala Sandwich": 60,
@@ -65,11 +70,13 @@ const dishPrices = {
     // Breakfast
     "Chole Bhatura": 50,
     "Samosa (per plate)": 20,
+    "Samosa (per peice)": 10,
     "Aloo Gunda (per plate)": 20,
     "Pyaaz Vada": 20,
     "Poha": 20,
     "Idli": 20,
     "Sambar Vada": 30,
+    "Bread Pakoda": 10,
     "Idli Fry": 30,
 
     // Paratha
