@@ -9,11 +9,11 @@ const dishPrices = {
     // Chinese section
     "Fried Rice": 60,
     "Paneer Rice": 80,
-    "Chowmein": 40,
+    "Chowmein": 50,
     "Manchurian": 50,
     "Manchurian Rice": 70,
     "Schezwan Rice": 70,
-    "Schezwan Chowmin": 60,
+    "Schezwan Chowmein": 60,
 
     // Sandwiches section
     "Franky": 30,
@@ -35,10 +35,10 @@ const dishPrices = {
     // Dosa section
     "Plain Dosa": 20,
     "Masala Dosa": 30,
-    "Uttapam Dosa": 40,
+    "Uttapam Dosa": 50,
     "Cheese Dosa": 50,
     "Butter Dosa": 40,
-    "Cut piece Dosa": 35,
+    "Cut piece Dosa": 40,
 
     // Pasta section
     "White Sauce Pasta": 70,
@@ -83,12 +83,18 @@ const dishPrices = {
     "Aloo Paratha": 40,
     "Gobi Paratha": 40,
     "Paneer Paratha": 60,
-
     "Tea": 5,
     "Special Tea": 10,
     "Hot Coffee": 15,
+    "Water bottle": 10,
 
-    "Water bottle": 10
+    // Snacks
+    "Aloo Patties": 20,
+    "Paneer Patties": 30,
+    "Hot Dog": 40,
+    "Paneer Hot Dog": 50,
+    "Cream Roll": 15,
+    "Samosa Chat":40  
 };
 
 const dishes = Object.keys(dishPrices);
