@@ -84,7 +84,7 @@ const dishPrices = {
     "Gobi Paratha": 40,
     "Paneer Paratha": 60,
 
-    "Tea": 6,
+    "Tea": 5,
     "Special Tea": 10,
     "Hot Coffee": 15,
 
