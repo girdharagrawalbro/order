@@ -94,7 +94,10 @@ const dishPrices = {
     "Hot Dog": 40,
     "Paneer Hot Dog": 50,
     "Cream Roll": 15,
-    "Samosa Chat":40  
+    "Samosa Chat":40,
+    "Chips (medium)": 10,
+    "Chips (large)": 20,
+    "Lassi": 30
 };
 
 const dishes = Object.keys(dishPrices);
