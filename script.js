@@ -97,7 +97,9 @@ const dishPrices = {
     "Samosa Chat":40,
     "Chips (medium)": 10,
     "Chips (large)": 20,
-    "Lassi": 30
+    "Lassi": 30,
+
+    "Cutlet": 30
 };
 
 const dishes = Object.keys(dishPrices);
