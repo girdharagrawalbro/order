@@ -99,7 +99,8 @@ const dishPrices = {
     "Chips (large)": 20,
     "Lassi": 30,
 
-    "Cutlet": 30
+    "Cutlet": 30,
+    "Kachori": 30
 };
 
 const dishes = Object.keys(dishPrices);
