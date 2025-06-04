@@ -1,1 +1,1 @@
-for canteen purposes
+for canteen purpose
