@@ -1,49 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Form</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Restaurant Billing — Minimal POS</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <!-- jsPDF for saving invoices as PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </head>
 
 <body>
-    <div class="container">
-        <h1>Order Form</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Serial Number</th>
-                    <th>Dish</th>
-                    <th>Quantity</th>
-                    <th>Price per Unit</th>
-                    <th>Total Price</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Row for adding dishes -->
-                <tr id="addRow">
-                    <td>
-                        <button class="add-btn" onclick="addRow()">+ Add</button>
-                    </td>
-                    <td colspan="5"></td>
-                </tr>
-            </tbody>
-        </table>
-        <p class="total">Overall Total: Rs.<span class="overallTotal">0.00</span></p>
-        <button class="print-btn" onclick="printBill()">Print Bill</button>
+
+    <div class="wrap">
+        <header class="card" aria-label="App header">
+            <div>
+                <h1>Minimal Restaurant POS</h1>
+                <div class="brandSub">Fast billing • Admin-driven menu • Local history</div>
+            </div>
+
+            <div class="rowFlex">
+                <div class="muted">Date: <strong id="todayDate"></strong></div>
+                <button class="btn" id="newOrderBtn">New Order</button>
+            </div>
+        </header>
+
+        <!-- Left: Billing area -->
+        <section class="card billArea" aria-labelledby="order-title">
+            <h2 id="order-title" style="margin:0 0 12px 0;font-size:1rem">Create Bill</h2>
+
+            <table id="orderTable" aria-describedby="order controls">
+                <thead>
+                    <tr>
+                        <th style="width:48px">Sno</th>
+                        <th>Dish</th>
+                        <th style="width:90px">Qty</th>
+                        <th style="width:110px">Price</th>
+                        <th style="width:130px">Total</th>
+                        <th style="width:72px">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="orderBody">
+                    <!-- Add-row placeholder -->
+                    <tr id="addRow">
+                        <td colspan="6">
+                            <button class="add-btn" id="addRowBtn" title="Add new dish row">+ Add Dish</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="billControls">
+                <div>
+                    <label class="muted small">Customer (optional)</label><br>
+                    <input id="customerName" type="text" placeholder="Customer name / table no." />
+                </div>
+
+                <div style="text-align:right">
+                    <div class="totalTxt">Overall: Rs. <span id="overallTotal">0.00</span></div>
+                    <div style="margin-top:8px">
+                        <button class="btn small" id="savePdfBtn">Save & Download PDF</button>
+                        <button class="btn secondary small" id="saveBtn">Save</button>
+                        <button class="btn danger small" id="clearBtn">Clear</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Right column: Admin + History -->
+        <aside class="sideCol">
+            <div class="card">
+                <h3 style="margin:0 0 12px 0">Menu (Admin)</h3>
+                <form id="dishForm" style="display:flex;gap:8px">
+                    <input id="dishName" placeholder="Dish name" required />
+                    <input id="dishPrice" type="number" min="0" placeholder="Price" required />
+                    <button class="btn" type="submit">Save</button>
+                </form>
+
+                <div class="adminList" id="dishList" aria-live="polite" style="margin-top:8px"></div>
+            </div>
+
+            <div class="card">
+                <h3 style="margin:0 0 12px 0">Order History</h3>
+                <div id="orderHistory" class="historyList" aria-live="polite"></div>
+                <div style="margin-top:8px;display:flex;gap:8px;justify-content:space-between">
+                    <button class="btn secondary small" id="exportAllBtn">Export All</button>
+                    <button class="btn secondary small" id="clearHistoryBtn">Clear History</button>
+                </div>
+            </div>
+        </aside>
+
+        <footer>&copy; 2024 Your Restaurant — Minimal POS (Local)</footer>
     </div>
 
-    <div class="billContent hidden"></div>
-
-    <footer>
-        &copy; 2024 Your Restaurant. All Rights Reserved.
-    </footer>
-
-    <script src="script.js"></script>
+    <!-- Modal for viewing single order -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modalCard" role="document">
+            <div class="modalHeader">
+                <strong id="modalTitle">Order Details</strong>
+                <button class="closeBtn" id="modalClose" title="Close">✕</button>
+            </div>
+            <div id="modalBody" style="max-height:60vh;overflow:auto;font-size:0.95rem"></div>
+            <div style="margin-top:12px;text-align:right">
+                <button class="btn secondary" id="modalPrint">Print / Download</button>
+                <button class="btn" id="modalSave">Save again</button>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="script.js"></script>
 
 </html>
